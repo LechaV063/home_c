@@ -1,9 +1,13 @@
 #include <stdio.h>
-
+/*
+Let’s       
+   go       
+     to walk
+*/
 int main (int argc, char **argv) 
 {
-    printf("\tLet’s\n");
-    printf("\t\tgo\n");
-    printf("\t\t\tto walk\n");
+    printf("Let’s\n");
+    printf("   go\n");
+    printf("      to walk\n");
     return 0;
 }
