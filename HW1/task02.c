@@ -2,8 +2,8 @@
 
 int main (int argc, char **argv) 
 {
-    printf("\n(\\___/)\n");
-    printf("(='.'=)\n");
-    printf("(\")_(\")\n\n");
-    return 0;
+printf("\tLet’s\n");
+printf("\t\tgo\n");
+printf("\t\t\tto walk\n");
+return 0;
 }
