@@ -49,14 +49,14 @@
 ```
 
 <table>
-    <tr><th>A</th><th>B</th><th>А ↔︎ В</th>
+    <tr><th>A</th><th>B</th><th>А ↔︎ В</th><th> </th><th>!A</th><th>!B</th><th>(A && B) || (!A && !B)</th>
     </tr>
-    <tr><td>0</td><td>0</td><td>1</td>
+    <tr><td>0</td><td>0</td><td>1</td><td><th> </th></td>1<td></td>1<td>1</td>
     </tr>
-    <tr><td>0</td><td>1</td><td>0</td>
+    <tr><td>0</td><td>1</td><td>0</td><td><th> </th></td>1<td></td>0<td>0</td>
     </tr>
-    <tr><td>1</td><td>0</td><td>0</td>
+    <tr><td>1</td><td>0</td><td>0</td><td><th> </th></td>0<td></td>1<td>0</td>
     </tr>
-    <tr><td>1</td><td>1</td><td>1</td>
+    <tr><td>1</td><td>1</td><td>1</td><td><th> </th></td>0<td></td>0<td>1</td>
     </tr>
 </table>
