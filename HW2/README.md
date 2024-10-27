@@ -1,8 +1,8 @@
 ### Перевести число из 10-ой в 16-ую систему
 
  - 12345678 --> hex
- 
-Запускаем скрипт task01.py : <i>~/home_c/HW2$ python3 task01.py</i>
+
+Запускаем скрипт task01.py : <i>~/home_c/HW2$ python3 task01.py</i><br>
 Вывод:
 ```
 aleksey@balkon:~/home_c/HW2$ python3 task01.py
@@ -45,7 +45,7 @@ BC614E
 
  - 1000000 --> hex
 
-Запускаем скрипт task01.py : <i>~/home_c/HW2$ python3 task01.py</i>
+Запускаем скрипт task01.py : <i>~/home_c/HW2$ python3 task01.py</i><br>
 Вывод:
 ```
 Введите целое положительное число: 1000000
