@@ -10,7 +10,7 @@ def validation_user_input():
             if user_input >= 0x00 and user_input <= 0xffffff:
                 return user_input
             else:
-                print('Число должно быть положительное и меньше 8388607.')
+                print('Число должно быть положительное и меньше 16777215.')
                 user_input = None
         except:
             print('Некорректный ввод, надо повторить.')
