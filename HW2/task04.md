@@ -13,4 +13,25 @@
         <th>B</th>
         <th>А → В</th>
     </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>-</td>
+    </tr>
+    
 </table>
