@@ -4,7 +4,7 @@
 
 - 12345678 --> dec
 
-Запускаем скрипт task02.py : ~/home_c/HW2$ python3 task02.py
+Запускаем скрипт task02.py : ~/home_c/HW2$ python3 src/task02.py
 
 Вывод:
 
@@ -26,7 +26,7 @@
 
 - 1000000 --> dec
 
-Запускаем скрипт task02.py : ~/home_c/HW2$ python3 task02.py
+Запускаем скрипт task02.py : ~/home_c/HW2$ python3 src/task02.py
 Вывод:
 
 ```sh

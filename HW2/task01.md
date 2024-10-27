@@ -4,12 +4,11 @@
 
 - 12345678 --> hex
 
-Запускаем скрипт task01.py : ~/home_c/HW2$ python3 task01.py
+Запускаем скрипт task01.py : ~/home_c/HW2$ python3 src/task01.py
 
 Вывод:
 
 ```sh
-aleksey@balkon:~/home_c/HW2$ python3 task01.py
 Введите целое положительное число: 12345678
 Преобразуем 12345678 в двоичное число -->
 0 разряд --> 0
@@ -49,7 +48,7 @@ BC614E
 
 - 1000000 --> hex
 
-Запускаем скрипт task01.py : ~/home_c/HW2$ python3 task01.py
+Запускаем скрипт task01.py : ~/home_c/HW2$ python3 src/task01.py
 Вывод:
 
 ```sh
