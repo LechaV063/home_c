@@ -8,40 +8,27 @@
 
 <table>
     <tr>
-        <th>A</th>
-        <th>B</th>
-        <th>А → В</th>
-        <th>!A</th>
-        <th>!A||B</th>
+        <th>A</th><th>B</th><th>А → В</th>
+        <th> </th>
+        <th>!A</th><th>B</th><th>!A||B</th>
     </tr>
     <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
+        <td>0</td><td>0</td><td>1</td>
+        <td> </td>
+        <td>1</td><td>0</td><td>1</td>
     </tr>
     <tr>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
+        <td>0</td><td>1</td><td>1</td>
+        <td> </td>
+        <td>1</td><td>1</td><td>1</td>    </tr>
     <tr>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-    </tr>
+        <td>1</td><td>0</td><td>0</td>
+        <td> </td>
+        <td>0</td><td>0</td><td>0</td>    </tr>
     <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-    </tr>
+        <td>1</td><td>1</td><td>1</td>
+        <td> </td>
+        <td>0</td><td>1</td><td>1</td>    </tr>
 </table>
 
 ```sh
