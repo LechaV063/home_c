@@ -2,7 +2,6 @@
 
 int main(void) {
     int digit_1=0,digit_2=0,digit_3=0;    
-    int sumOfDigit;
     int number;
     scanf("%d", &number);
     digit_1 = number / 100;
