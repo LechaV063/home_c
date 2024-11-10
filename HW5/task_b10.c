@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 // Ввести целое число и определить, верно ли, что все его цифры расположены в порядке возрастания.
+
 int main(int argv, char **argc)
 {
     int userNumber, rightDigit, leftDigit;

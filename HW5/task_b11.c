@@ -1,6 +1,8 @@
 #include <stdio.h>
+
 // Ввести целое число и «перевернуть» его,
 // так чтобы первая цифра стала последней и т.д.
+
 int main(int agrv, char **argc)
 {
     int userNumber, reverseNumber = 0, currentDigit;

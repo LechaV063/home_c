@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 // Ввести целое число и определить, верно ли, что в нём ровно одна цифра «9».
+
 int main(int argv, char **argc)
 {
     int userNumber, curentDigit;

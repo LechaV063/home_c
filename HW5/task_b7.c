@@ -1,7 +1,9 @@
 #include <stdio.h>
+
 // Ввести целое число и определить, верно ли,
 // что в его записи есть две одинаковые цифры,
 // НЕ обязательно стоящие рядом.
+
 int main(int argv, char **argc)
 {
     int userNumber, curentDigit;

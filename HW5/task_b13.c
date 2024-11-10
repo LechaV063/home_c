@@ -1,6 +1,8 @@
 #include <stdio.h>
+
 // Посчитать количество четных и нечетных цифр числа.
 // Одно целое неотрицательное число.
+
 int main(int argv, char **argc)
 {
     int userNumber, currentDigit, odd = 0, even = 0; // odd - нечётный, even - чётный

@@ -1,6 +1,8 @@
 #include <stdio.h>
+
 // Ввести целое число и найти сумму его цифр.
 // Одно целое число большее или равное нулю.
+
 int main(int argv, char **argc)
 {
     int number, sum = 0, digit; // sum - нужно инициализировать

@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 // Ввести два целых числа a и b (a ≤ b) и вывести квадраты всех чисел от a до b.
+
 int main(int argv, char **argc)
 {
     int a, b;
