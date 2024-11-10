@@ -8,7 +8,7 @@ int main(int argv, char ** argc)
         {
             curentDigit = userNumber%10; // младшая цифра цифра
             if (curentDigit%2 != 0) { // проверка на нечётность
-                printf("NO\n"); // первая нечётная цифра
+                printf("NO\n"); // найдена первая нечётная цифра
                 return 0;
             }
             userNumber /= 10;
