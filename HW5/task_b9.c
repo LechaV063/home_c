@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// Ввести целое число и определить, верно ли, что все его цифры четные.
 int main(int argv, char ** argc) 
 {
     int userNumber, curentDigit;
