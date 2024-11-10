@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+// Ввести целое число и определить, верно ли,
+// что в его записи есть две одинаковые цифры, стоящие рядом
 int main(int argv, char ** argc) {
     int number, digit_prev=0, digit_current=0;   
     scanf("%d", &number);
@@ -21,6 +22,6 @@ int main(int argv, char ** argc) {
             printf("NO\n");  // цикл окончен - совпадений нет
             return 0;
         }
-    printf("NO\n"); // цифр меньше двух - совпадений не может быть
+    printf("NO\n"); // цифр меньше двух - совпадений не будет
     return 0;
 }
