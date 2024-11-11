@@ -5,4 +5,15 @@
 
 int main(int argv, char **argc)
 {
+    int number, count = 0;
+    while (1)
+    {
+        scanf("%d", &number);
+        if (number == 0) { 
+            break; // выход по нулевому числу из цикла опроса ввода
+        };
+        count++;
+    }
+    printf("%d\n", count);
+    return 0;
 }
