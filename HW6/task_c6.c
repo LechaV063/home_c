@@ -11,7 +11,22 @@
 // сколько зерен попросил положить на N-ую клетку 
 // изобретатель шахмат (на 1-ую – 1 зерно, на 2-ую – 2 зерна, на 3-ю – 4 зерна, …)
 
+unsigned long long int geometryProgressiv(int n);
+
 int main(int argv, char ** argc) {
-    
+    int userNum;
+    scanf("%d", &userNum);
+    if (userNum>=1 && userNum<=64){
+        printf("%llu\n", geometryProgressiv(userNum));
+    }
     return 0;
+}
+
+unsigned long long int geometryProgressiv(int n) 
+{
+    long long int result = 1;
+    if (n==0) return result;
+    for (int i=2; i<=n; i++)
+        result *=2;
+    return result; 
 }
