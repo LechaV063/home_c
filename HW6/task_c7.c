@@ -22,13 +22,13 @@ int convert(int n, int p) {
     {
         n /=p;
         currentDigit = n%p;
-        result *= 10;
+        result *= 10;   // передвигаем разряд
         result += currentDigit;
     }
     return result ;
 }
 
-int reverse(int n) // переворачиваем
+int reverse(int n) // переворачиваем цифры в числе
 {
     int result=0, currentDigit = 0;
     while (n > 0) {
