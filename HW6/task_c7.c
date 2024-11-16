@@ -28,7 +28,7 @@ int convert(int n, int p) {
     return result ;
 }
 
-int reverse(int n) // переворачиваем
+int reverse(int n) // переворачиваемe
 {
     int result=0, currentDigit = 0;
     while (n > 0) {
