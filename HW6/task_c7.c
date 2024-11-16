@@ -1,41 +1,45 @@
 #include <stdio.h>
 
-//  Составить функцию, которая переводит число N из 
+//  Составить функцию, которая переводит число N из
 // десятичной системы счисления в P-ичную систему счисления.
 
 int convert(int n, int p);
-int reverse(int n);
 
-int main(int argv, char ** argc) {
-    int number,power;
-    scanf("%d %d",&number,&power);
-    printf("%d\n", reverse(convert(number, power)));
-
+int main(int argv, char **argc)
+{
+    int number, power;
+    scanf("%d %d", &number, &power);
+    if (number >= 0 && power >= 2 && power <= 9)
+    {
+        printf("%d\n", convert(number, power));
+    }
     return 0;
 }
 
-int convert(int n, int p) {
+int convert(int n, int p)
+{
     int currentDigit = 0;
     int result = 0;
-    result= n%p;
-    while (n/p> 0) 
+    int digits = 0;
+    int output;
+    result = n % p;
+    while (n / p > 0)
     {
-        n /=p;
-        currentDigit = n%p;
-        result *= 10;   // передвигаем разряд
+        n /= p;
+        currentDigit = n % p;
+        result *= 10; // передвигаем разряд
         result += currentDigit;
+        digits++;
     }
-    return result ;
-}
-
-int reverse(int n) // переворачиваем цифры в числе
-{
-    int result=0, currentDigit = 0;
-    while (n > 0) {
-        currentDigit = n%10;
-        n /= 10;
-        result *= 10;
-        result += currentDigit;
+    // разворачиваем result в обратном порядке
+    output += result % 10;
+    while (digits)
+    {
+        result /= 10;
+        output *= 10;
+        currentDigit = result % 10;
+        output += currentDigit;
+        digits--;
     }
-    return result;
+    return output;
 }
