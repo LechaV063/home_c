@@ -12,6 +12,8 @@ int main(int argv, char **argc)
 {
     int userNumber = 0;
     scanf("%d", &userNumber);
+    if (userNumber == 0)
+        return 0;
     printf("%d\n", max_find(userNumber));
     return 0;
 }
