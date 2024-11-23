@@ -6,8 +6,8 @@
 // Выходные данные: Одно единственное целое число
 
 const int LENGTH = 5;
-int inputData(int *arr, int n);
-int minOfArray(int *arr, int n);
+int inputData(int *arr, int n); // для заполнения массива, возращает индекс последнего элемента
+int minOfArray(int *arr, int n); // возвращает минимум из массива arr
 
 int main(int argv, char **argc)
 {

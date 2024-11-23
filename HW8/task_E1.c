@@ -6,8 +6,8 @@
 // Выходные данные: Одно число в формате "%.3f"
 
 const int LENGTH = 5;
-int inputData(int *arr, int n);
-float averageOfArray(int *arr, int n);
+int inputData(int *arr, int n); // для заполнения массива, возращает индекс последнего элемента
+float averageOfArray(int *arr, int n);  // возвращает серднее значение элементов массива arr
 
 int main(int argv, char **argc)
 {
