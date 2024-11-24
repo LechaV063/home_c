@@ -47,10 +47,10 @@ void printData(int *arr, int n)
 
 void cycleShiftRight(int *arr, int n)
 {
-    int temp = arr[n-1];
-    for (size_t i = n-1; i > 0; i--)
+    int temp = arr[n - 1];
+    for (size_t i = n - 1; i > 0; i--)
     {
-        arr[i] = arr[i-1];
+        arr[i] = arr[i - 1];
     }
     arr[0] = temp;
 }

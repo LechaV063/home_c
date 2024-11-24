@@ -60,9 +60,11 @@ int makeResultArray(int *inpArr, int *resArr, int n)
                 resArr[index] = inpArr[i];
                 index++;
             }
-        } else {
-                resArr[index] = inpArr[i];
-                index++;
+        }
+        else
+        {
+            resArr[index] = inpArr[i];
+            index++;
         }
     }
     return index;
