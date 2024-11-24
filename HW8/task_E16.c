@@ -8,7 +8,6 @@
 
 const int LENGTH = 10;               // длина массива
 int inputData(int *arr, int n);      // для заполнения массива, возращает индекс последнего элемента
-void printData(int *arr, int n);     // выводит элементы массива через пробел
 int mostElement(int *inpArr, int n); // выводит самый распрастранённый элемент
 
 int main(int argv, char **argc)
@@ -27,20 +26,6 @@ int inputData(int *arr, int n)
         scanf("%d", &arr[i]);
     }
     return i;
-};
-
-void printData(int *arr, int n)
-{
-    int i;
-    for (i = 0; i < n; i++)
-    {
-        printf("%d", arr[i]);
-        if (i != n - 1) // после последнего элемента пробел не пишим
-        {
-            putchar(' ');
-        }
-    }
-    putchar('\n');
 };
 
 int mostElement(int *inpArr, int n)
