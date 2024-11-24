@@ -21,9 +21,13 @@ int main(int argv, char **argc)
 void printData(int *arr, int n)
 {
     int i;
-    for (i = n - 1; i >= 0; i--)
+    for (i = 0; i < n; i++)
     {
-        printf("%d ", arr[i]);
+        printf("%d", arr[i]);
+        if (i != n - 1) // после последнего элемента пробел не пишим
+        {
+            putchar(' ');
+        }
     }
     putchar('\n');
 };
@@ -40,6 +44,13 @@ int numberToDigits(int num, int *outputArr)
         currentDigit = num % 10;
         index++;
         outputArr[index] = currentDigit;
+    }
+    int temp;
+    for (int i = 0; i < index / 2; i++) // оборачиваем порядок цифр
+    {
+        temp = outputArr[i];
+        outputArr[i] = outputArr[index - i];
+        outputArr[index - i] = temp;
     }
     return index + 1;
 };
