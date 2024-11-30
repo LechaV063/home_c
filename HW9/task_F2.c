@@ -28,7 +28,7 @@ void sort_even_odd(int n, int a[]);
 //         scanf("%d", &arr[i]);
 //     }
 //     return i;
-// };
+// }
 
 // void printData(int *arr, int n)
 // {
@@ -42,13 +42,13 @@ void sort_even_odd(int n, int a[]);
 //         }
 //     }
 //     putchar('\n');
-// };
+// }
 
 void sort_even_odd(int n, int a[])
 {
     int temp;
     for (int i = 0; i < n; i++)
-        for (int j = i; j < n - 1; j++)
+        for (int j = 0; j < n - 1; j++)
         {
             {
                 if (a[j] % 2 && !(a[j + 1] % 2))
@@ -59,4 +59,4 @@ void sort_even_odd(int n, int a[])
                 }
             }
         }
-};
+}
