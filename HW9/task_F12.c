@@ -7,23 +7,23 @@
 
 #define MAXSIZE 10
 
-int inputData(int n, int *arr)
+int inputData(int size, int *arr)
 {
     int i;
-    for (i = 0; i < n; i++)
+    for (i = 0; i < size; i++)
     {
         scanf("%d", &arr[i]);
     }
     return i;
 };
 
-void printData(int n, int *arr)
+void printData(int size, int *arr)
 {
     int i;
-    for (i = 0; i < n; i++)
+    for (i = 0; i < size; i++)
     {
         printf("%d", arr[i]);
-        if (i != n - 1) // после последнего элемента пробел не пишим
+        if (i != size - 1) // после последнего элемента пробел не пишим
         {
             putchar(' ');
         }
