@@ -7,7 +7,7 @@
 
 const char inputFileName[10] = "input.txt";
 const char outputFileName[11] = "output.txt";
-int len(int num, char *str)
+int length(int num, char *str)
 {
     int result = 0;
     for (int i = 0; i < num; i++)
@@ -51,7 +51,7 @@ int main(int argv, char **argc)
         readLine(fInput, inputLine);
         fprintf(fOutput, "%s, ", inputLine);
         fprintf(fOutput, "%s, ", inputLine);
-        fprintf(fOutput, "%s %d", inputLine, len(MAXLEN, inputLine));
+        fprintf(fOutput, "%s %d", inputLine, length(MAXLEN, inputLine));
     }
     fclose(fOutput);
     fclose(fInput);
