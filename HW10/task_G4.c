@@ -12,7 +12,7 @@
 const char inputFileName[10] = "input.txt";
 const char outputFileName[11] = "output.txt";
 
-int lenght(int size, char *str)
+int lenght(int size, char *str) // возвращает длину строки
 {
     int result = 0;
     for (int i = 0; i < size; i++)
@@ -28,7 +28,7 @@ int lenght(int size, char *str)
     return result;
 }
 
-int isUnique(int size, char *testStr, char character, int indx)
+int isUnique(int size, char *testStr, char character, int indx) // возращает 1 если символ character не повторятся в строке testStr
 {
     for (size_t i = 0; i < size; i++)
     {
@@ -44,7 +44,7 @@ int isUnique(int size, char *testStr, char character, int indx)
     return 1; // символ в слове уникален
 }
 
-int getUniqueStr(int size, char *Str, char *uniqStr)
+int getUniqueStr(int size, char *Str, char *uniqStr) // возвращает длину строки uniqStr с уникальными символами
 {
     int index = 0;
     for (size_t i = 0; i < size; i++)
@@ -58,7 +58,7 @@ int getUniqueStr(int size, char *Str, char *uniqStr)
     return index;
 }
 
-void sortStr(int size, char *str)
+void sortStr(int size, char *str) // сортирует строку лексикографически
 {
     char temp;
     for (size_t i = 0; i < size - 1; i++)
@@ -88,12 +88,15 @@ int main(int argv, char **argc)
     if (fpIn != NULL && fpOut != NULL) // проверка открылись ли файлы
     {
         fscanf(fpIn, "%[a-z] %[a-z]", word1, word2); // получение слов из файла input.txt
-        lenWord1 = lenght(MAXLEN, word1);            // определение длины слова 1
-        lenWord2 = lenght(MAXLEN, word2);            // определение длины слова 2
-        lenWord1 = getUniqueStr(lenWord1, word1, uniqueFromWord1);
-        lenWord2 = getUniqueStr(lenWord2, word2, uniqueFromWord2);
+
+        lenWord1 = lenght(MAXLEN, word1); // определение длины слова 1
+        lenWord2 = lenght(MAXLEN, word2); // определение длины слова 2
+
+        lenWord1 = getUniqueStr(lenWord1, word1, uniqueFromWord1); // получение уникальных слов
+        lenWord2 = getUniqueStr(lenWord2, word2, uniqueFromWord2); // из исходных
+
         int index = 0;
-        for (size_t i = 0; i < lenWord1; i++)
+        for (size_t i = 0; i < lenWord1; i++) // получение результирующей строки
         {
             if (!isUnique(lenWord2, uniqueFromWord2, uniqueFromWord1[i], -1))
             {
@@ -101,7 +104,7 @@ int main(int argv, char **argc)
                 index++;
             }
         }
-        if (index)
+        if (index) // если есть результат выводим его в файл output.txt
         {
             sortStr(lenght(MAXLEN, result), result);
             int i = 0;
