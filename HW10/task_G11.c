@@ -1,34 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 // Постановка задачи:
-// В файле input.txt дана строка слов, разделенных пробелами. Найти самое длинное слово и
-// вывести его в файл output.txt. Случай, когда самых длинных слов может быть несколько, не обрабатывать.
-// Входные данные: Строка из английских букв и пробелов. Не более 1000 символов.
-// Выходные данные: Одно слово из английских букв.
+// В файле input.txt дано предложение. Необходимо определить, сколько слов заканчиваются на букву 'а'.
+// Ответ записать в файл output.txt.
+// Входные данные: Строка из английских букв и пробелов не более 1000 символов.
+// Выходные данные: Одно целое число
 
 #define MAXLEN 1000
 
 const char inputFileName[] = "input.txt";
 const char outputFileName[] = "output.txt";
-
-void findLongWord(char *inpString, char *outString)
+int countWordsEndsTo_a(char inpStr[])
 {
-    int maxLength = 0;
-    char tmpString[MAXLEN] = {0};
-    int index = 0, nums;
-    char *pIndex = inpString;
+    int count_end_a = 0, nums = 0;
+    char *pIndex = inpStr;
+    char tmpString[MAXLEN];
     while ((nums = sscanf(pIndex, "%s", tmpString)) > 0)
     {
-        if (strlen(tmpString) > maxLength)
+        int lastLetter = strlen(tmpString) - 1;
+        if (tmpString[lastLetter] == 'a')
         {
-            strcpy(outString, tmpString);
-            maxLength = strlen(tmpString);
+            count_end_a++;
         }
         pIndex = strstr(pIndex, tmpString) + strlen(tmpString) + 1; // ставим указатель в конец строки
     }
-};
+    return count_end_a;
+}
 
 int main(int argv, char **argc)
 {
@@ -44,8 +42,7 @@ int main(int argv, char **argc)
     }
     int count = fscanf(fpIn, "%[^\n]", inpString);
     // printf("%s", inpString);
-    findLongWord(inpString, outString);
-    fprintf(fpOut, "%s\n", outString);
+    fprintf(fpOut, "%d\n", countWordsEndsTo_a(inpString));
     fclose(fpOut);
     fclose(fpIn);
     return 0;
