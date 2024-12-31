@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Постановка задачи:
+// В файле input.txt записан полный адрес файла (возможно, без расширения). 
+// Необходимо изменить его расширение на ".html" и записать результат в файл output.txt.
+// Входные данные: Строка состоящая из символов: a-z, A-Z, 0-9, /
+// Выходные данные: Исходная строка с измененным расширением.
+
+#define MAXLEN 1000
+
+const char inputFileName[] = "input.txt";
+const char outputFileName[] = "output.txt";
+
+int main(int argv, char **argc)
+{
+    FILE *fpIn, *fpOut;
+    fpIn = fopen(inputFileName, "r");
+    fpOut = fopen(outputFileName, "w");
+    if (fpIn == NULL || fpOut == NULL) // проверка на ошибку открытия файлов
+    {
+        printf("Файл %s не найден! Аварийный выход из программы.\n", inputFileName);
+        exit(1);
+    }
+    fclose(fpOut);
+    fclose(fpIn);
+    return 0;
+}
+
