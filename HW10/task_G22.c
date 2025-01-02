@@ -106,10 +106,9 @@ void stage2(char *inpS, char *outS)
 
 void stage3(char *inpS, char *outS)
 {
-    int index = 2;
+    int index = 1;
     outS[0] = inpS[0];
-    outS[1] = inpS[1];
-    for (size_t i = 2; i < strlen(inpS); i++)
+    for (size_t i = 1; i < strlen(inpS); i++)
     {
         if (inpS[i] != inpS[i - 1])
         {
@@ -122,16 +121,23 @@ void stage3(char *inpS, char *outS)
 
 void stage4(char *inpS, char *outS)
 {
-    int index = 2;
+    int index = 1;
     int needNulls = 0;
     outS[0] = inpS[0];
-    outS[1] = inpS[1];
-    for (size_t i = 2; i < OUTLEN; i++)
+    for (size_t i = 1; i < OUTLEN; i++)
     {
-        if (needNulls || inpS[i] == 0)
+        if (inpS[i] == 0)
         {
             needNulls = 1;
+        }
+        if (needNulls)
+        {
             outS[index] = '0';
+            index++;
+        }
+        else
+        {
+            outS[index] = inpS[i];
             index++;
         }
     }
@@ -156,23 +162,19 @@ int main(int argv, char **argc)
         inpString[i] += ch;
         i++;
     }
-    printf("%s\n", inpString);
-
+    // printf("%s\n", inpString);
     stage1(inpString, outString);
     strcpy(inpString, outString);
-    printf("%s\n", inpString);
-
+    // printf("%s\n", inpString);
     stage2(inpString, outString);
     strcpy(inpString, outString);
-    printf("%s\n", inpString);
-
+    // printf("%s\n", inpString);
     stage3(inpString, outString);
     strcpy(inpString, outString);
-    printf("%s\n", inpString);
-
+    // printf("%s\n", inpString);
     stage4(inpString, outString);
     strcpy(inpString, outString);
-    printf("%s\n", inpString);
+    // printf("%s\n", inpString);
     fprintf(fpOut, "%s", outString);
     fclose(fpOut);
     fclose(fpIn);
