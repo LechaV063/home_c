@@ -1,12 +1,31 @@
 #include <stdint.h>
-
+#ifndef SENSOR
+#define SENSOR
 #define MAXLEN 2000
 
-typedef struct {
+struct sensor
+{
     uint16_t year;
     uint8_t month;
     uint8_t day;
     uint8_t hour;
     uint8_t minute;
     int8_t temperature;
-} sensor;
+};
+
+enum months
+{
+    yan = 1,
+    feb,
+    mar,
+    apr,
+    mai,
+    yun,
+    yul,
+    aug,
+    sep,
+    oct,
+    nov,
+    dec
+};
+#endif

@@ -1,12 +1,6 @@
-#ifndef SENSOR
-#define SENSOR
 #include "sensor.h"
-#endif
+#include <stdio.h>
+#include <stdint.h>
 
-int avrgMonthTemp(sensor arr[], uint8_t month);
-int maxMonthTemp(sensor arr[], uint8_t month);
-int minMonthTemp(sensor arr[], uint8_t month);
-int avrgYearTemp(sensor arr[]);
-int maxYearTemp(sensor arr[]);
-int minYearTemp(sensor arr[]);
-
+int monthStatistic(struct sensor arr[], uint8_t month);
+int yearStatistic(struct sensor arr[]);

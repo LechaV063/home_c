@@ -1,21 +1,12 @@
 #include "temp_api.h"
 
-int avrgMonthTemp(sensor arr[], uint8_t month)
+int monthStatistic(struct sensor arr[], uint8_t month)
 {
+    printf("Снятие статистики за %d-й месяц.\n", month);
     return 0;
 };
-int maxMonthTemp(sensor arr[], uint8_t month){
-    return 0;
-};
-int minMonthTemp(sensor arr[], uint8_t month){
-    return 0;
-};
-int avrgYearTemp(sensor arr[]){
-    return 0;
-};
-int maxYearTemp(sensor arr[]){
-    return 0;
-};
-int minYearTemp(sensor arr[]){
+int yearStatistic(struct sensor arr[])
+{
+    printf("Снятие статистики за год.\n");
     return 0;
 };
