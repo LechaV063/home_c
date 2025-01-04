@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
     struct measuring arrMessung[MAXLEN];
     char month[3];
     char *months[] = {"январь", "февраль", "март", "апрель",
-                  "май", "июнь", "июль", "август",
-                  "сентябрь", "октябрь", "ноябрь", "декабрь"};
+                      "май", "июнь", "июль", "август",
+                      "сентябрь", "октябрь", "ноябрь", "декабрь"};
     char fileName[100];
     menu(argc, argv, fileName, month);
     if (strlen(fileName) > 0)
     {
-        printf("Выбран \n- файл измерений: %s%s%s\n",GREEN, fileName, RESET);
+        printf("Для обработки выбраны: \n- файл измерений --> %s%s%s\n", GREEN, fileName, RESET);
     }
     else
     {
@@ -33,10 +33,12 @@ int main(int argc, char *argv[])
             printf("Недопусимый номер месяца! Значение должно быть от 1 до 12.\n\t%sАварийный выход из программы!!!%s\n\n", RED, RESET);
             exit(1);
         }
+        printf("- статистика за  --> %s%s%s\n", GREEN, months[numberMonth - 1], RESET);
         monthStatistic(arrMessung, numberMonth);
     }
     else
     {
+        printf("- статистика за  --> %sгод%s\n", GREEN, RESET);
         yearStatistic(arrMessung);
     }
     return 0;
