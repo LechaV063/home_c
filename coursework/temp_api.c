@@ -2,11 +2,11 @@
 
 int monthStatistic(struct measuring arr[], uint8_t month)
 {
-    printf("Снятие статистики за %s месяц.\n", months[month-1]);
+    printf("- статистика за: %s%s%s\n", GREEN, "месяц", RESET);
     return 0;
 };
 int yearStatistic(struct measuring arr[])
 {
-    printf("Снятие статистики за год.\n");
+    printf("- статистика за: %sгод%s\n", GREEN, RESET);
     return 0;
 };

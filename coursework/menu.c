@@ -14,7 +14,7 @@ void help(void)
     printf("-m NN \tномер месяца от 1 до 12 (опциональный),\n\tесли не указан, то обрабатывается весь год.\n");
 }
 
-void menu(int argc, char *argv[], char *filename, char *month)
+void menu(int argc, char *argv[], char *filename, char *mon)
 {
     int result = 0;
     while ((result = getopt(argc, argv, "hm:f:")) != -1)
@@ -30,7 +30,7 @@ void menu(int argc, char *argv[], char *filename, char *month)
             }
             else
             {
-                strcpy(month, optarg);
+                strcpy(mon, optarg);
             }
             break;
         case 'f':

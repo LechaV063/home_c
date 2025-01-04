@@ -10,11 +10,14 @@ int main(int argc, char *argv[])
 {
     struct measuring arrMessung[MAXLEN];
     char month[3];
+    char *months[] = {"январь", "февраль", "март", "апрель",
+                  "май", "июнь", "июль", "август",
+                  "сентябрь", "октябрь", "ноябрь", "декабрь"};
     char fileName[100];
     menu(argc, argv, fileName, month);
     if (strlen(fileName) > 0)
     {
-        printf("Выбран файл измерений: %s%s%s\n",GREEN, fileName, RESET);
+        printf("Выбран \n- файл измерений: %s%s%s\n",GREEN, fileName, RESET);
     }
     else
     {

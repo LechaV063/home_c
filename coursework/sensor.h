@@ -13,6 +13,11 @@ struct measuring
     uint8_t minute;
     int8_t temperature;
 };
+
+#endif
+
+#ifndef MONTH
+#define MONTH
 char *months[] = {"январь", "февраль", "март", "апрель",
                   "май", "июнь", "июль", "август",
                   "сентябрь", "октябрь", "ноябрь", "декабрь"};
