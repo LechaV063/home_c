@@ -8,11 +8,12 @@
 
 int main(int argc, char *argv[])
 {
+    FILE *fpInp;
     struct measuring arrMessung[MAXLEN];
     char month[3];
     char *monthNames[] = {"январь", "февраль", "март", "апрель",
-                      "май", "июнь", "июль", "август",
-                      "сентябрь", "октябрь", "ноябрь", "декабрь"};
+                          "май", "июнь", "июль", "август",
+                          "сентябрь", "октябрь", "ноябрь", "декабрь"};
     char fileName[100];
     menu(argc, argv, fileName, month);
     if (strlen(fileName) > 0)
@@ -24,6 +25,12 @@ int main(int argc, char *argv[])
         printf("Не выбран файл измерений! Для справки используйте ключ: -h\n\t%sАварийный выход из программы!!!%s\n\n", RED, RESET);
         return 1;
     }
+    fpInp = fopen(fileName, "r");
+    if (fpInp == NULL)
+    {
+        printf("Файл %s не найден.\n\t%sАварийный выход из программы!!!%s\n\n", fileName, RED, RESET);
+        exit(1);
+    }
     if (strlen(month) > 0)
     {
         uint8_t numberMonth;
@@ -34,12 +41,13 @@ int main(int argc, char *argv[])
             exit(1);
         }
         printf("\tстатистика за  --> %s%s%s\n", GREEN, monthNames[numberMonth - 1], RESET);
-        monthStatistic(arrMessung, numberMonth);
+        monthStatistic(fpInp, arrMessung, numberMonth);
     }
     else
     {
         printf("\tстатистика за  --> %sгод%s\n", GREEN, RESET);
-        yearStatistic(arrMessung);
+        yearStatistic(fpInp, arrMessung);
     }
+    fclose(fpInp);
     return 0;
 }
