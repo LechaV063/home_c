@@ -1,4 +1,5 @@
 #include "sensor.h"
+#include "colors.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>

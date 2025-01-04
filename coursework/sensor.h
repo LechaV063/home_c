@@ -1,9 +1,10 @@
 #include <stdint.h>
+#include "colors.h"
 #ifndef SENSOR
 #define SENSOR
 #define MAXLEN 2000
 
-struct sensor
+struct measuring
 {
     uint16_t year;
     uint8_t month;
