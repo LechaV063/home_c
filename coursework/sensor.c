@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     menu(argc, argv, fileName, month);
     if (strlen(fileName) > 0)
     {
-        printf("Выбран файл измерений: %s\n", fileName);
+        printf("Выбран файл измерений: %s%s%s\n",GREEN, fileName, RESET);
     }
     else
     {

@@ -13,20 +13,7 @@ struct measuring
     uint8_t minute;
     int8_t temperature;
 };
-
-enum months
-{
-    yan = 1,
-    feb,
-    mar,
-    apr,
-    mai,
-    yun,
-    yul,
-    aug,
-    sep,
-    oct,
-    nov,
-    dec
-};
+char *months[] = {"январь", "февраль", "март", "апрель",
+                  "май", "июнь", "июль", "август",
+                  "сентябрь", "октябрь", "ноябрь", "декабрь"};
 #endif
