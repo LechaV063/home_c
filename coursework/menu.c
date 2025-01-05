@@ -19,8 +19,8 @@ void menu(int argc, char *argv[], char *filename, char *mon)
     int result = 0;
     if (argc == 1)
     {
-        help();
-        exit(0);
+        printf("Нет обязательного ключа -f. Для справки используйте ключ: -h\n\t%sАварийный выход из программы!!!%s\n\n", RED, RESET);
+        exit(1);
     }
     while ((result = getopt(argc, argv, "hm:f:")) != -1)
     {
