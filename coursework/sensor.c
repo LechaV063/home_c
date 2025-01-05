@@ -10,14 +10,14 @@ int main(int argc, char *argv[])
 {
     FILE *fpInp;
     char month[3];
-    char *monthNames[] = {"янв", "фев", "мар", "апр",
-                          "май", "июн", "июл", "авг",
-                          "сен", "окт", "ноя", "дек"};
+    char *monthNames[] = {"январь", "февраль", "март", "апрель",
+                          "май", "июнь", "июль", "август",
+                          "сентябрь", "октябрь", "ноябрь", "декабрь"};
     char fileName[100];
-    menu(argc, argv, fileName, month);
+    menu(argc, argv, fileName, month); // обработка аргументов командной строки
     if (strlen(fileName) > 0)
     {
-        printf("Для обработки выбраны: \n\tфайл измерений --> %s%s%s\n", GREEN, fileName, RESET);
+        printf("Выбран файл: %s%s%s\n", GREEN, fileName, RESET);
     }
     else
     {
@@ -48,12 +48,12 @@ int main(int argc, char *argv[])
             free(arrMeasure);
             exit(1);
         }
-        printf("\tстатистика за  --> %s%s%s\n", GREEN, monthNames[numberMonth - 1], RESET);
+        printf("Cтатистика за %s%s%s месяц.\n", GREEN, monthNames[numberMonth - 1], RESET);
         calcStatistic(lenArray, arrMeasure, numberMonth);
     }
     else
     {
-        printf("\tстатистика за  --> %sгод%s\n", GREEN, RESET);
+        printf("Cтатистика за %sгод%s с разбивкой по месяцам.\n", GREEN, RESET);
         calcStatistic(lenArray, arrMeasure, 0);
     }
     free(arrMeasure);

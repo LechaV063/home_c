@@ -3,12 +3,15 @@ char *monthNames[] = {"янв", "фев", "мар", "апр",
                       "май", "июн", "июл", "авг",
                       "сен", "окт", "ноя", "дек"};
 
+static void printLine(void){
+    printf("------------------------------------------\n");
+}
+ 
 static void printHeader(void)
 {
-    printf("Результат обработки:\n");
-    printf("------------------------------------------\n");
+    printLine();
     printf("| Год  | Месяц | Т.сред | Т.макс | Т.мин |\n");
-    printf("------------------------------------------\n");
+    printLine();
 }
 
 static void printEmpty(int year, int month)
@@ -22,7 +25,7 @@ static void printResult(int year, int month, int min, int max, float avg)
 
     printf("|%5d |  %s  | %s%6.2f%s |    %s%3d%s |   %s%3d%s |\n",
            year, monthNames[month - 1], YELLOW, avg, RESET, RED, max, RESET, BLUE, min, RESET);
-    printf("------------------------------------------\n");
+    // printf("------------------------------------------\n");
 }
 
 int monthStatistic(uint64_t size, struct measuring arr[], uint8_t month)
@@ -82,6 +85,7 @@ int calcStatistic(uint64_t size, struct measuring arr[], uint8_t month)
     if (month) // выбрана статистика за 1 месяц
     {
         monthStatistic(size, arr, month); // статистика за выбранный месяц
+        printLine();
     }
     else // выбрана статистика за год
     {
@@ -89,6 +93,7 @@ int calcStatistic(uint64_t size, struct measuring arr[], uint8_t month)
         {
             monthStatistic(size, arr, i); // статистика по каждому месяцу
         }
+        printLine();
         monthStatistic(size, arr, 0); // общегодовая статистика
     }
     return 0;
