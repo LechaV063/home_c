@@ -115,5 +115,5 @@ uint64_t readFileToArray(FILE *fp, struct measuring *arr) // читает фай
             arr++;
             count++;
         }
-    return count; // возвращает количество прочитанных строк
+    return count; // возвращает количество прочитанных измерений
 };
