@@ -3,7 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "sensor.h"
-#include "temp_api.h"
+#include "temp_functions.h"
 #include "menu.h"
 
 int main(int argc, char *argv[])
