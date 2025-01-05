@@ -29,7 +29,7 @@ int monthStatistic(uint64_t size, struct measuring arr[], uint8_t month)
 {
     uint64_t count = 0;
     int64_t summTemp = 0;
-    int numberParams, year, mon, day, hour, min, temp;
+    int numberParams, year, mon, day, hour, min, temp; // вспомогательные переменные
     int maxTemp = -99, minTemp = 99;
     float avrgTemp;
     for (size_t i = 0; i < size; i++)
@@ -71,6 +71,7 @@ int monthStatistic(uint64_t size, struct measuring arr[], uint8_t month)
     else
     {
         printf("В файле нет данных\n");
+        return 1;
     }
     return 0;
 };
@@ -78,11 +79,11 @@ int monthStatistic(uint64_t size, struct measuring arr[], uint8_t month)
 int calcStatistic(uint64_t size, struct measuring arr[], uint8_t month)
 {
     printHeader();
-    if (month)
+    if (month) // выбрана статистика за 1 месяц
     {
         monthStatistic(size, arr, month); // статистика за выбранный месяц
     }
-    else
+    else // выбрана статистика за год
     {
         for (size_t i = 1; i <= 12; i++)
         {
