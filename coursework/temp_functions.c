@@ -20,7 +20,7 @@ static void printEmpty(int year, int month)
 static void printResult(int year, int month, int min, int max, float avg)
 {
 
-    printf("|%5d |  %s  |  %s%5.2f%s |    %s%3d%s |   %s%3d%s |\n",
+    printf("|%5d |  %s  | %s%6.2f%s |    %s%3d%s |   %s%3d%s |\n",
            year, monthNames[month - 1], YELLOW, avg, RESET, RED, max, RESET, BLUE, min, RESET);
     printf("------------------------------------------\n");
 }
@@ -97,16 +97,23 @@ uint64_t readFileToArray(FILE *fp, struct measuring *arr) // читает фай
 {
     uint64_t count = 0;
     int numberParams, year, mon, day, hour, min, temp;
-    while ((numberParams = fscanf(fp, "%d;%d;%d;%d;%d;%d", &year, &mon, &day, &hour, &min, &temp)) == 6)
-    {
-        arr->year = year;
-        arr->month = mon;
-        arr->day = day;
-        arr->hour = hour;
-        arr->minute = min;
-        arr->temperature = temp;
-        arr++;
-        count++;
-    }
+    while ((numberParams = fscanf(fp, "%d;%d;%d;%d;%d;%d", &year, &mon, &day, &hour, &min, &temp)) > 0)
+        if (numberParams < 6)
+        {
+            char s[30];
+            numberParams = fscanf(fp, "%[^\n]", s);
+            printf("ERROR %d=%s\n", numberParams, s);
+        }
+        else
+        {
+            arr->year = year;
+            arr->month = mon;
+            arr->day = day;
+            arr->hour = hour;
+            arr->minute = min;
+            arr->temperature = temp;
+            arr++;
+            count++;
+        }
     return count; // возвращает количество прочитанных строк
 };
