@@ -17,6 +17,11 @@ void help(void)
 void menu(int argc, char *argv[], char *filename, char *mon)
 {
     int result = 0;
+    if (argc == 1)
+    {
+        help();
+        exit(0);
+    }
     while ((result = getopt(argc, argv, "hm:f:")) != -1)
     {
         switch (result)

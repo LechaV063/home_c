@@ -2,7 +2,7 @@
 #include "colors.h"
 #ifndef SENSOR
 #define SENSOR
-#define MAXLEN 2000
+#define MAXLEN 60*24*365
 
 struct measuring
 {

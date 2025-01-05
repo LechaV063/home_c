@@ -9,11 +9,10 @@
 int main(int argc, char *argv[])
 {
     FILE *fpInp;
-    struct measuring arrMessung[MAXLEN];
     char month[3];
-    char *monthNames[] = {"январь", "февраль", "март", "апрель",
-                          "май", "июнь", "июль", "август",
-                          "сентябрь", "октябрь", "ноябрь", "декабрь"};
+    char *monthNames[] = {"янв", "фев", "мар", "апр",
+                          "май", "июн", "июл", "авг",
+                          "сен", "окт", "ноя", "дек"};
     char fileName[100];
     menu(argc, argv, fileName, month);
     if (strlen(fileName) > 0)
@@ -31,6 +30,14 @@ int main(int argc, char *argv[])
         printf("Файл %s не найден.\n\t%sАварийный выход из программы!!!%s\n\n", fileName, RED, RESET);
         exit(1);
     }
+    struct measuring *arrMeasure = malloc(MAXLEN * sizeof(struct measuring));
+    if (arrMeasure == NULL)
+    {
+        printf("Память под массив не выделена\n");
+        exit(1);
+    }
+    uint64_t lenArray = readFileToArray(fpInp, arrMeasure);
+    fclose(fpInp);
     if (strlen(month) > 0)
     {
         uint8_t numberMonth;
@@ -38,16 +45,17 @@ int main(int argc, char *argv[])
         if (numberMonth < 1 || numberMonth > 12)
         {
             printf("Недопусимый номер месяца! Значение должно быть от 1 до 12.\n\t%sАварийный выход из программы!!!%s\n\n", RED, RESET);
+            free(arrMeasure);
             exit(1);
         }
         printf("\tстатистика за  --> %s%s%s\n", GREEN, monthNames[numberMonth - 1], RESET);
-        monthStatistic(fpInp, arrMessung, numberMonth);
+        calcStatistic(lenArray, arrMeasure, numberMonth);
     }
     else
     {
         printf("\tстатистика за  --> %sгод%s\n", GREEN, RESET);
-        yearStatistic(fpInp, arrMessung);
+        calcStatistic(lenArray, arrMeasure, 0);
     }
-    fclose(fpInp);
+    free(arrMeasure);
     return 0;
 }
