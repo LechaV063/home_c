@@ -1,0 +1,21 @@
+CC=gcc
+CCFLAGS=-Wall
+LOG_FLAGS=-DLOG_ON -DLOG_W
+DEBUG_FLAGS=-g -O0
+CLEAN=rm -f
+PROGRAMM_NAME=sensor
+OBJECT_FILES=*.o
+SOURCE_DIR=../src/
+SOURCE_FILES=$(SOURCE_DIR)sensor.c $(SOURCE_DIR)menu.c $(SOURCE_DIR)temp_functions.c
+
+
+all: clean $(PROGRAMM_NAME)
+
+$(PROGRAMM_NAME): $(OBJECT_FILES)
+	$(CC) $(CCFLAGS) $(LOG_FLAGS) $(DEBUG_FLAGS) $^ -o $@
+
+$(OBJECT_FILES): $(SOURCE_FILES)
+	$(CC) $(CCFLAGS) $(LOG_FLAGS) $(DEBUG_FLAGS) -c $^
+
+clean:
+	$(CLEAN) *.o $(PROGRAMM_NAME)

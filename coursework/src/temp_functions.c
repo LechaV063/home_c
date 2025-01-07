@@ -32,16 +32,13 @@ int monthStatistic(uint64_t size, struct measuring arr[], uint8_t month)
 {
     uint64_t count = 0;
     int64_t summTemp = 0;
-    int numberParams, year, mon, day, hour, min, temp; // вспомогательные переменные
+    int year, mon, temp; // вспомогательные переменные
     int maxTemp = -99, minTemp = 99;
     float avrgTemp;
     for (size_t i = 0; i < size; i++)
     {
         year = (arr + i)->year;
         mon = (arr + i)->month;
-        day = (arr + i)->day;
-        hour = (arr + i)->hour;
-        min = (arr + i)->minute;
         temp = (arr + i)->temperature;
         if (month == 0) // для годовой статистики
         {
@@ -108,6 +105,7 @@ uint64_t readFileToArray(FILE *fp, struct measuring *arr) // читает фай
         {
             char s[30];
             numberParams = fscanf(fp, "%[^\n]", s);
+            LW("Ошибка обработки строки")
             printf("ERROR %d=%s\n", numberParams, s);
         }
         else
