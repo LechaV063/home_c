@@ -8,7 +8,6 @@ OBJECT_FILES=*.o
 SOURCE_DIR=../src/
 SOURCE_FILES=$(SOURCE_DIR)sensor.c $(SOURCE_DIR)menu.c $(SOURCE_DIR)temp_functions.c
 
-
 all: clean $(PROGRAMM_NAME)
 
 $(PROGRAMM_NAME): $(OBJECT_FILES)
