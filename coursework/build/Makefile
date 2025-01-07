@@ -6,7 +6,9 @@ CLEAN=rm -f
 PROGRAMM_NAME=sensor
 OBJECT_FILES=*.o
 SOURCE_DIR=../src/
-SOURCE_FILES=$(SOURCE_DIR)sensor.c $(SOURCE_DIR)menu.c $(SOURCE_DIR)temp_functions.c
+SOURCE_FILES=$(SOURCE_DIR)sensor.c \
+	$(SOURCE_DIR)menu.c \
+	$(SOURCE_DIR)temp_functions.c
 
 all: clean $(PROGRAMM_NAME)
 
